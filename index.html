@@ -131,6 +131,60 @@
             object-fit: cover;
         }
 
+        .products-section {
+            background-color: #ffffff;
+            padding: 100px 0;
+        }
+
+        .products-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .products-content {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .products-video {
+            flex: 1;
+        }
+
+        .products-video video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .products-text {
+            flex: 1;
+        }
+
+        .product-item {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border-left: 5px solid #333;
+        }
+
+        .product-item h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .product-item p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 flex-direction: column;
@@ -154,6 +208,15 @@
             .nav-links {
                 display: none;
             }
+
+            .products-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .products-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -163,9 +226,9 @@
             <div class="header">
                 <img src="images/logo.png" alt="Logo" class="logo">
                 <div class="nav-links">
-                    <a href="#">PRODUCTS</a>
+                    <a href="#products">PRODUCTS</a>
                     <span style="color: white;">|</span>
-                    <a href="#">CONTACT US</a>
+                    <a href="#contact">CONTACT US</a>
                 </div>
                 <div class="hamburger">
                     <span></span>
@@ -176,11 +239,27 @@
 
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="images/man-with-ipad.png" alt="Man with iPad">
+                    <img src="images/man-with-ipad.jpg" alt="Man with iPad">
                 </div>
                 <div class="hero-text">
                     <div class="main-title">IDEAS THAT CHANGES<br>EVERYTHING</div>
                     <div class="company-name">MODERN EDGE TECHNOLOGIES</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products-section" id="products">
+        <div class="container">
+            <div class="products-title">OUR PRODUCTS</div>
+            <div class="products-content">
+                <div class="products-video">
+                    <video controls autoplay muted loop>
+                        <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="products-text">
                 </div>
             </div>
         </div>
@@ -191,10 +270,10 @@
             <div class="team-title">MEET OUR TEAM</div>
             <div class="team-images">
                 <div class="team-member">
-                    <img src="Images/my-picture.png" alt="Team Member">
+                    <img src="images/your-picture.jpg" alt="Team Member">
                 </div>
                 <div class="team-member">
-                    <img src="Images/friend-picture.png" alt="Team Member">
+                    <img src="images/friend-picture.jpg" alt="Team Member">
                 </div>
             </div>
         </div>
