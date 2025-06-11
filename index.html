@@ -1,19 +1,118 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Modern Edge Technology</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: url('man-with-ipad.png') no-repeat center center/cover;
+      height: 70vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .team {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .team-member {
+      text-align: center;
+      width: 200px;
+    }
+
+    .team-member img {
+      width: 100%;
+      border-radius: 50%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    footer img {
+      height: 40px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Modern Edge Technology</h1>
-  <p>We're building Ringa, Lecturai, and a revolutionary Virtual Closet.</p>
-  <ul>
-    <li><strong>Ringa:</strong> Plain-English coding for schools</li>
-    <li><strong>Lecturai:</strong> AI Tutor that explains your slides</li>
-    <li><strong>Virtual Closet:</strong> Try clothes with a 3D model of yourself</li>
-  </ul>
-  <p>Contact us at: <a href="mailto:you@example.com">you@example.com</a></p>
+  <header>
+    <h1>Ideas That Change Everything</h1>
+  </header>
+
+  <section>
+    <h2>Welcome to Modern Edge Technology</h2>
+    <p>We're building:</p>
+    <ul>
+      <li><strong>Ringa:</strong> Plain-English coding for schools</li>
+      <li><strong>Lecturai:</strong> AI Tutor that explains your slides</li>
+      <li><strong>Virtual Closet:</strong> Try clothes with a 3D model of yourself</li>
+    </ul>
+    <p>Contact us at: <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
+  <section>
+    <h2>Meet Our Team</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="my-picture.jpg" alt="Your Name">
+        <p>Your Name</p>
+      </div>
+      <div class="team-member">
+        <img src="friend-picture.jpg" alt="Friend's Name">
+        <p>Friend's Name</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Modern Edge Technologies</p>
+    <img src="logo.png" alt="Company Logo">
+  </footer>
 </body>
 </html>
