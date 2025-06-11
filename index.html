@@ -147,7 +147,7 @@
             font-weight: bold;
             color: #333;
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
         }
 
         .products-content {
@@ -159,7 +159,7 @@
 
         .ringa-logo {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .ringa-logo img {
@@ -169,13 +169,16 @@
 
         .products-video {
             flex: 1;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .products-video video {
             width: 100%;
             height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: block;
         }
 
         .products-text {
@@ -315,7 +318,7 @@
             </div>
             <div class="products-content">
                 <div class="products-video">
-                    <video controls autoplay muted loop>
+                    <video autoplay muted loop playsinline>
                         <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
