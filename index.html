@@ -13,6 +13,7 @@
 
         body {
             font-family: Arial, sans-serif;
+            padding-top: 90px; /* Add padding to account for fixed header */
         }
 
         .hero-section {
@@ -20,6 +21,9 @@
             color: white;
             min-height: 100vh;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container {
@@ -33,6 +37,20 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #000000;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
         }
 
         .logo {
@@ -52,6 +70,11 @@
             font-weight: normal;
             font-size: 14px;
             letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.7;
         }
 
         .hamburger {
@@ -65,44 +88,27 @@
             width: 25px;
             height: 2px;
             background-color: white;
+            transition: all 0.3s ease;
         }
 
         .hero-content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 100px 0;
-            gap: 50px;
+            justify-content: center;
+            padding: 50px 0;
+            width: 100%;
         }
 
         .hero-image {
-            flex: 0 0 300px;
+            max-width: 100%;
+            text-align: center;
         }
 
         .hero-image img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
-            border-radius: 50%;
-            border: 8px solid white;
-        }
-
-        .hero-text {
-            flex: 1;
-            text-align: right;
-        }
-
-        .main-title {
-            font-size: 4rem;
-            font-weight: bold;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .company-name {
-            font-size: 1rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-            opacity: 0.8;
+            max-height: 80vh;
+            object-fit: contain;
         }
 
         .team-section {
@@ -228,17 +234,25 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .header {
+                padding: 15px 0;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+
             .hero-content {
-                flex-direction: column;
-                text-align: center;
+                padding: 30px 0;
             }
 
-            .hero-text {
-                text-align: center;
-            }
-
-            .main-title {
-                font-size: 2.5rem;
+            .hero-image img {
+                max-height: 60vh;
             }
 
             .team-images {
@@ -259,33 +273,35 @@
             .products-title {
                 font-size: 2rem;
             }
+
+            .team-title {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="header">
+        <div class="container">
+            <img src="Images/logo.png" alt="Logo" class="logo">
+            <div class="nav-links">
+                <a href="#products">PRODUCTS</a>
+                <span style="color: white;">|</span>
+                <a href="#contact">CONTACT US</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
     <div class="hero-section">
         <div class="container">
-            <div class="header">
-                <img src="Images/logo.png" alt="Logo" class="logo">
-                <div class="nav-links">
-                    <a href="#products">PRODUCTS</a>
-                    <span style="color: white;">|</span>
-                    <a href="#contact">CONTACT US</a>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="Images/man-with-ipad.png" alt="Man with iPad">
-                </div>
-                <div class="hero-text">
-                    <div class="main-title">IDEAS THAT CHANGES<br>EVERYTHING</div>
-                    <div class="company-name">MODERN EDGE TECHNOLOGIES</div>
+                    <img src="Images/init.png" alt="Modern Edge Technologies Hero">
                 </div>
             </div>
         </div>
@@ -300,7 +316,7 @@
             <div class="products-content">
                 <div class="products-video">
                     <video controls autoplay muted loop>
-                        <source src="videos/product-demo.mp4" type="video/mp4">
+                        <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
