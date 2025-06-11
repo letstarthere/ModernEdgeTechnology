@@ -130,11 +130,43 @@
             gap: 100px;
         }
 
+        .team-member {
+            text-align: center;
+            max-width: 300px;
+        }
+
         .team-member img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .team-member .title {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .team-description {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            line-height: 1.6;
+            color: #555;
+            font-size: 0.95rem;
         }
 
         .products-section {
@@ -186,10 +218,9 @@
         }
 
         .why-ringa {
-            background-color: #f9f9f9;
+            background-color: transparent;
             padding: 40px;
             border-radius: 10px;
-            border-left: 5px solid #333;
         }
 
         .why-ringa h3 {
@@ -264,6 +295,10 @@
                 align-items: center;
             }
 
+            .team-member {
+                max-width: 100%;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -301,11 +336,13 @@
     </div>
 
     <div class="hero-section">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="Videos/ideas.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-image">
-                    <img src="Images/init.png" alt="Modern Edge Technologies Hero">
-                </div>
+                <!-- Content can be added here if needed -->
             </div>
         </div>
     </div>
@@ -343,10 +380,20 @@
             <div class="team-title">MEET OUR TEAM</div>
             <div class="team-images">
                 <div class="team-member">
-                    <img src="Images/my-picture.png" alt="Team Member">
+                    <img src="Images/my-picture.png" alt="Sean Bampoe">
+                    <h3>Sean Bampoe</h3>
+                    <div class="title">Co-founder & Lead Developer</div>
+                    <div class="team-description">
+                        Hi, I'm Sean Bampoe, a computer engineering student with a deep passion for building innovative tech. As the lead developer and co-founder of Modern Edge Technology, I focus on turning ideas into working products through code, creativity, and a problem-solving mindset.
+                    </div>
                 </div>
                 <div class="team-member">
-                    <img src="Images/friend-picture.png" alt="Team Member">
+                    <img src="Images/friend-picture.png" alt="Yingisani Mabaso">
+                    <h3>Yingisani Mabaso</h3>
+                    <div class="title">Co-founder & Product Lead</div>
+                    <div class="team-description">
+                        Hi, I'm Yingisani Mabaso, a computer engineering student at the University of Pretoria. As a co-founder of Modern Edge Technology, I'm passionate about exploring how technology can improve lives, and I enjoy working across both the technical and creative sides of our projects.
+                    </div>
                 </div>
             </div>
         </div>
