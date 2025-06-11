@@ -148,6 +148,17 @@
             display: flex;
             align-items: center;
             gap: 80px;
+            margin-top: 40px;
+        }
+
+        .ringa-logo {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .ringa-logo img {
+            max-width: 300px;
+            height: auto;
         }
 
         .products-video {
@@ -163,6 +174,37 @@
 
         .products-text {
             flex: 1;
+        }
+
+        .why-ringa {
+            background-color: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid #333;
+        }
+
+        .why-ringa h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .why-ringa ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-ringa li {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .why-ringa li strong {
+            color: #000;
+            font-weight: bold;
         }
 
         .product-item {
@@ -224,7 +266,7 @@
     <div class="hero-section">
         <div class="container">
             <div class="header">
-                <img src="images/logo.png" alt="Logo" class="logo">
+                <img src="Images/logo.png" alt="Logo" class="logo">
                 <div class="nav-links">
                     <a href="#products">PRODUCTS</a>
                     <span style="color: white;">|</span>
@@ -239,7 +281,7 @@
 
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="images/man-with-ipad.jpg" alt="Man with iPad">
+                    <img src="Images/man-with-ipad.png" alt="Man with iPad">
                 </div>
                 <div class="hero-text">
                     <div class="main-title">IDEAS THAT CHANGES<br>EVERYTHING</div>
@@ -252,14 +294,26 @@
     <div class="products-section" id="products">
         <div class="container">
             <div class="products-title">OUR PRODUCTS</div>
+            <div class="ringa-logo">
+                <img src="Images/ringa.png" alt="Ringa Logo">
+            </div>
             <div class="products-content">
                 <div class="products-video">
                     <video controls autoplay muted loop>
-                        <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
+                        <source src="videos/product-demo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="products-text">
+                    <div class="why-ringa">
+                        <h3>Why Ringa?</h3>
+                        <ul>
+                            <li><strong>Code in English</strong> – No confusing syntax, just clear instructions.</li>
+                            <li><strong>Build Logic Early</strong> – Develop critical thinking from a young age.</li>
+                            <li><strong>Made for Classrooms</strong> – Designed with high school learners in mind.</li>
+                            <li><strong>Real Coding Output</strong> – See your logic come alive instantly.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -270,10 +324,10 @@
             <div class="team-title">MEET OUR TEAM</div>
             <div class="team-images">
                 <div class="team-member">
-                    <img src="images/your-picture.jpg" alt="Team Member">
+                    <img src="Images/my-picture.png" alt="Team Member">
                 </div>
                 <div class="team-member">
-                    <img src="images/friend-picture.jpg" alt="Team Member">
+                    <img src="Images/friend-picture.png" alt="Team Member">
                 </div>
             </div>
         </div>
