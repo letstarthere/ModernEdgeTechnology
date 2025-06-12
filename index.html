@@ -318,20 +318,31 @@
         }
 
         .team-description {
-            background: var(--neu-shadow-1);
+            background: var(--gray-4);
             padding: 24px;
             margin: 0;
-            overflow: auto;
+            overflow: visible;
             box-shadow: var(--neu-shadow-1);
             border-radius: 8px;
             text-align: left;
-            line-height: 1.6;
-            color: #555;
-            font-size: 0.95rem;
+            line-height: 1.5rem;
+            color: var(--primary-0);
+            font-size: 1rem;
+            font-family: 'Cascadia Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            transition: background 0.2s, box-shadow;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
         }
 
         :root {
-            --neu-shadow-1: 0 2px 8px rgba(0, 0, 0, 0.15);
+            --neu-shadow-1: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --gray-4: #1e1e1e;
+            --primary-0: #d4d4d4;
         }
 
         .contact-section {
