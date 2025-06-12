@@ -10,11 +10,51 @@
     <link rel="icon" type="image/png" sizes="16x16" href="Images/black-logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/black-logo.png">
     <link rel="shortcut icon" href="Images/black-logo.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --black: #0b0431;
+            --gray-1: #0b0431e0;
+            --gray-2: #0b043187;
+            --gray-3: #0b043170;
+            --gray-4: #f5f5fa;
+            --white: #f8f8ff;
+            --primary-0: #2a1f62;
+            --primary-1: #390cb9;
+            --primary-2: #b3a4dc;
+            --primary-3: #e2e2f3;
+            --primary-4: #dcd0ff;
+            --primary-5: #e6e6f3;
+            --accent-1: #e428a4;
+            --accent-2: #00826a;
+            --width-1: 1440px;
+            --width-2: calc(1248px + (var(--spacing-6) * 2));
+            --width-3: calc(1088px + (var(--spacing-6) * 2));
+            --width-4: calc(512px + (var(--spacing-6) * 2));
+            --width-5: 720px;
+            --spacing-1: 8px;
+            --spacing-2: 16px;
+            --spacing-3: 24px;
+            --spacing-4: 32px;
+            --spacing-5: 40px;
+            --spacing-6: 64px;
+            --spacing-7: 104px;
+            --spacing-8: 200px;
+            --neu-shadow-1: -10px -10px 30px 0px #ffffff, 10px 10px 30px 0px #1d0dca17;
+            --neu-shadow-1-hover: -15px -15px 30px 0px #ffffff, 15px 15px 30px 0px #1d0dca17;
+            --neu-shadow-2: -10px -10px 30px 0px #ffffff71, 10px 10px 30px 0px #1d0dca17;
+            --box-shadow-2: 0px 22px 40px -20px #1c0dca20;
+            --ease-1: cubic-bezier(0.79, 0.03, 0.36, 1.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
@@ -69,6 +109,7 @@
             background-color: #000000;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            font-family: 'Work Sans', sans-serif;
         }
 
         .header .container {
@@ -92,10 +133,11 @@
         .nav-links a {
             text-decoration: none;
             color: white;
-            font-weight: normal;
+            font-weight: 500;
             font-size: 14px;
             letter-spacing: 1px;
             transition: opacity 0.3s ease;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .nav-links a:hover {
@@ -134,6 +176,7 @@
             color: #333;
             text-align: center;
             margin-bottom: 40px;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .products-content {
@@ -154,22 +197,50 @@
         }
 
         .code-sample {
-            background-color: #1e1e1e;
-            color: #d4d4d4;
-            padding: 30px;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.6;
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            user-select: none;
             margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border: 1px solid #333;
+            overflow: visible;
+            transition: background 0.2s, box-shadow 0.2s;
+            transform: translateY(0px) scale(1);
+        }
+
+        .code-sample pre {
+            padding: 24px;
+            margin: 0;
+            overflow: auto;
+            box-shadow: var(--neu-shadow-1);
+            background: var(--gray-4);
+            color: var(--primary-0);
+            font-family: 'Cascadia Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 1rem;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.5rem;
+            border-radius: 8px;
+            width: 100%;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+            unicode-bidi: isolate;
+        }
+
+        .code-sample:hover {
+            box-shadow: var(--neu-shadow-1-hover);
         }
 
         .code-sample .comment {
             color: #6a9955;
             font-style: italic;
-            margin-bottom: 10px;
         }
 
         .code-sample .keyword {
@@ -185,7 +256,7 @@
         }
 
         .code-sample .operator {
-            color: #d4d4d4;
+            color: var(--primary-0);
         }
 
         .products-video {
@@ -207,16 +278,30 @@
         }
 
         .why-ringa {
-            background-color: transparent;
-            padding: 40px;
-            border-radius: 10px;
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            user-select: none;
+            overflow: visible;
+            transition: background 0.2s, box-shadow 0.2s;
+            transform: translateY(0px) scale(1);
+            padding: 24px;
+            margin: 0;
+            box-shadow: var(--neu-shadow-1);
+            background: var(--gray-4);
+            border-radius: 8px;
+        }
+
+        .why-ringa:hover {
+            box-shadow: var(--neu-shadow-1-hover);
         }
 
         .why-ringa h3 {
             font-size: 2rem;
-            color: #333;
+            color: var(--primary-0);
             margin-bottom: 30px;
             font-weight: bold;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .why-ringa ul {
@@ -226,32 +311,44 @@
 
         .why-ringa li {
             margin-bottom: 20px;
-            color: #333;
+            color: var(--primary-0);
             font-size: 1.1rem;
             line-height: 1.6;
         }
 
         .why-ringa li strong {
-            color: #000;
+            color: var(--primary-1);
             font-weight: bold;
         }
 
         .product-item {
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            user-select: none;
             margin-bottom: 40px;
-            padding: 30px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            border-left: 5px solid #333;
+            overflow: visible;
+            transition: background 0.2s, box-shadow 0.2s;
+            transform: translateY(0px) scale(1);
+            padding: 24px;
+            box-shadow: var(--neu-shadow-1);
+            background: var(--gray-4);
+            border-radius: 8px;
+        }
+
+        .product-item:hover {
+            box-shadow: var(--neu-shadow-1-hover);
         }
 
         .product-item h3 {
             font-size: 1.5rem;
-            color: #333;
+            color: var(--primary-0);
             margin-bottom: 15px;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .product-item p {
-            color: #666;
+            color: var(--primary-0);
             line-height: 1.6;
             font-size: 1rem;
         }
@@ -269,6 +366,7 @@
             line-height: 1.2;
             max-width: 800px;
             margin: 0 auto;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .team-section {
@@ -282,6 +380,7 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 80px;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .team-images {
@@ -308,6 +407,7 @@
             color: #333;
             margin-bottom: 15px;
             font-weight: bold;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .team-member .title {
@@ -318,14 +418,17 @@
         }
 
         .team-description {
-            background: var(--gray-4);
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            user-select: none;
+            overflow: visible;
+            transition: background 0.2s, box-shadow 0.2s;
+            transform: translateY(0px) scale(1);
             padding: 24px;
             margin: 0;
-            overflow: visible;
             box-shadow: var(--neu-shadow-1);
-            border-radius: 8px;
-            text-align: left;
-            line-height: 1.5rem;
+            background: var(--gray-4);
             color: var(--primary-0);
             font-size: 1rem;
             font-family: 'Cascadia Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -333,16 +436,13 @@
             word-spacing: normal;
             word-break: normal;
             word-wrap: normal;
-            transition: background 0.2s, box-shadow;
-            position: relative;
-            cursor: pointer;
-            user-select: none;
+            text-align: left;
+            line-height: 1.5rem;
+            border-radius: 8px;
         }
 
-        :root {
-            --neu-shadow-1: 0 8px 32px rgba(0, 0, 0, 0.12);
-            --gray-4: #1e1e1e;
-            --primary-0: #d4d4d4;
+        .team-description:hover {
+            box-shadow: var(--neu-shadow-1-hover);
         }
 
         .contact-section {
@@ -356,6 +456,7 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 80px;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .contact-members {
@@ -374,6 +475,7 @@
             color: #333;
             margin-bottom: 15px;
             font-weight: bold;
+            font-family: 'Work Sans', sans-serif;
         }
 
         .contact-member .role {
@@ -384,15 +486,26 @@
         }
 
         .contact-info {
-            background-color: #ffffff;
-            padding: 20px;
+            cursor: pointer;
+            opacity: 1;
+            position: relative;
+            user-select: none;
+            overflow: visible;
+            transition: background 0.2s, box-shadow 0.2s;
+            transform: translateY(0px) scale(1);
+            padding: 24px;
+            margin: 0;
+            box-shadow: var(--neu-shadow-1);
+            background: var(--gray-4);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
             text-align: left;
             line-height: 1.8;
-            color: #555;
+            color: var(--primary-0);
             font-size: 1rem;
+        }
+
+        .contact-info:hover {
+            box-shadow: var(--neu-shadow-1-hover);
         }
 
         .contact-info p {
@@ -400,7 +513,7 @@
         }
 
         .contact-info strong {
-            color: #333;
+            color: var(--primary-1);
         }
 
         @media (max-width: 768px) {
@@ -470,7 +583,7 @@
                 font-size: 2.5rem;
             }
 
-            .code-sample {
+            .code-sample pre {
                 font-size: 12px;
                 padding: 20px;
             }
@@ -510,26 +623,26 @@
                 <img src="Images/ringa.png" alt="Ringa Logo">
             </div>
             <div class="code-sample">
-                <div class="comment">// Simple calculator in Lingo</div>
-                <div><span class="keyword">store</span> NUM1 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the first number:"</span></div>
-                <div><span class="keyword">store</span> OP <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the operation (+, -, *, /):"</span></div>
-                <div><span class="keyword">store</span> NUM2 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the second number:"</span></div>
-                <br>
-                <div><span class="keyword">create function</span> <span class="function">calculate</span>(<span class="keyword">receive</span> A, B):</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> OP <span class="keyword">is</span> <span class="string">"+"</span>:</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">+</span> B</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"-"</span>:</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">-</span> B</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"*"</span>:</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">*</span> B</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"/"</span>:</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">/</span> B</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise</span>:</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> 0</div>
-                <br>
-                <div><span class="keyword">store</span> RESULT <span class="keyword">as</span> <span class="function">calculate</span>(NUM1, NUM2)</div>
-                <div><span class="function">print</span> <span class="string">"Result:"</span></div>
-                <div><span class="function">print</span> RESULT</div>
+                <pre><span class="comment">// Simple calculator in Lingo</span>
+<span class="keyword">store</span> NUM1 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the first number:"</span>
+<span class="keyword">store</span> OP <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the operation (+, -, *, /):"</span>
+<span class="keyword">store</span> NUM2 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the second number:"</span>
+
+<span class="keyword">create function</span> <span class="function">calculate</span>(<span class="keyword">receive</span> A, B):
+    <span class="keyword">if</span> OP <span class="keyword">is</span> <span class="string">"+"</span>:
+        <span class="keyword">return</span> A <span class="operator">+</span> B
+    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"-"</span>:
+        <span class="keyword">return</span> A <span class="operator">-</span> B
+    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"*"</span>:
+        <span class="keyword">return</span> A <span class="operator">*</span> B
+    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"/"</span>:
+        <span class="keyword">return</span> A <span class="operator">/</span> B
+    <span class="keyword">otherwise</span>:
+        <span class="keyword">return</span> 0
+
+<span class="keyword">store</span> RESULT <span class="keyword">as</span> <span class="function">calculate</span>(NUM1, NUM2)
+<span class="function">print</span> <span class="string">"Result:"</span>
+<span class="function">print</span> RESULT</pre>
             </div>
             <div class="products-content">
                 <div class="products-video">
@@ -569,17 +682,21 @@
                     <img src="Images/my-picture.png" alt="Sean Bampoe">
                     <h3>Sean Bampoe</h3>
                     <div class="title">Co-founder & Lead Developer</div>
-                    <div class="team-description">
-                        Hi, I'm Sean Bampoe, a computer engineering student with a deep passion for building innovative tech. As the lead developer and co-founder of Modern Edge Technology, I focus on turning ideas into working products through code, creativity, and a problem-solving mindset.
-                    </div>
+                    <div class="team-description">Hi, I'm Sean Bampoe, a computer engineering student with a 
+deep passion for building innovative tech. As the lead 
+developer and co-founder of Modern Edge Technology, I focus 
+on turning ideas into working products through code, 
+creativity, and a problem-solving mindset.</div>
                 </div>
                 <div class="team-member">
                     <img src="Images/friend-picture.png" alt="Yingisani Mabaso">
                     <h3>Yingisani Mabaso</h3>
                     <div class="title">Co-founder & Product Lead</div>
-                    <div class="team-description">
-                        Hi, I'm Yingisani Mabaso, a computer engineering student at the University of Pretoria. As a co-founder of Modern Edge Technology, I'm passionate about exploring how technology can improve lives, and I enjoy working across both the technical and creative sides of our projects.
-                    </div>
+                    <div class="team-description">Hi, I'm Yingisani Mabaso, a computer engineering student 
+at the University of Pretoria. As a co-founder of Modern 
+Edge Technology, I'm passionate about exploring how 
+technology can improve lives, and I enjoy working across 
+both the technical and creative sides of our projects.</div>
                 </div>
             </div>
         </div>
