@@ -102,20 +102,6 @@
             opacity: 0.7;
         }
 
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2px;
-            background-color: white;
-            transition: all 0.3s ease;
-        }
-
         .hero-content {
             display: flex;
             align-items: center;
@@ -135,64 +121,6 @@
             height: auto;
             max-height: 80vh;
             object-fit: contain;
-        }
-
-        .team-section {
-            background-color: #f5f5f5;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .team-title {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 80px;
-        }
-
-        .team-images {
-            display: flex;
-            justify-content: center;
-            gap: 100px;
-        }
-
-        .team-member {
-            text-align: center;
-            max-width: 300px;
-        }
-
-        .team-member img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        .team-member h3 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .team-member .title {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .team-description {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
-            text-align: left;
-            line-height: 1.6;
-            color: #555;
-            font-size: 0.95rem;
         }
 
         .products-section {
@@ -221,8 +149,43 @@
         }
 
         .ringa-logo img {
-            max-width: 300px;
+            max-width: 150px;
             height: auto;
+        }
+
+        .code-sample {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 30px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid #333;
+        }
+
+        .code-sample .comment {
+            color: #6a9955;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .code-sample .keyword {
+            color: #569cd6;
+        }
+
+        .code-sample .string {
+            color: #ce9178;
+        }
+
+        .code-sample .function {
+            color: #dcdcaa;
+        }
+
+        .code-sample .operator {
+            color: #d4d4d4;
         }
 
         .products-video {
@@ -293,6 +256,137 @@
             font-size: 1rem;
         }
 
+        .about-section {
+            background-color: #f5f5f5;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .about-content {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #000;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-section {
+            background-color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .team-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 80px;
+        }
+
+        .team-images {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .team-member .title {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .team-description {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            line-height: 1.6;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            background-color: #f5f5f5;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 80px;
+        }
+
+        .contact-members {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+        }
+
+        .contact-member {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .contact-member h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .contact-member .role {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            text-align: left;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info strong {
+            color: #333;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
@@ -341,6 +435,29 @@
             .team-title {
                 font-size: 2rem;
             }
+
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .contact-members {
+                flex-direction: column;
+                gap: 50px;
+                align-items: center;
+            }
+
+            .contact-member {
+                max-width: 100%;
+            }
+
+            .about-content {
+                font-size: 2.5rem;
+            }
+
+            .code-sample {
+                font-size: 12px;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -349,14 +466,11 @@
         <div class="container">
             <img src="Images/logo.png" alt="Logo" class="logo">
             <div class="nav-links">
-                <a href="#products">PRODUCTS</a>
+                <a href="#products">EXPLORE OUR PRODUCTS</a>
+                <span style="color: white;">|</span>
+                <a href="#about">ABOUT US</a>
                 <span style="color: white;">|</span>
                 <a href="#contact">CONTACT US</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
         </div>
     </div>
@@ -375,9 +489,31 @@
 
     <div class="products-section" id="products">
         <div class="container">
-            <div class="products-title">OUR PRODUCTS</div>
+            <div class="products-title">EXPLORE OUR PRODUCTS</div>
             <div class="ringa-logo">
                 <img src="Images/ringa.png" alt="Ringa Logo">
+            </div>
+            <div class="code-sample">
+                <div class="comment">// Simple calculator in Lingo</div>
+                <div><span class="keyword">store</span> NUM1 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the first number:"</span></div>
+                <div><span class="keyword">store</span> OP <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the operation (+, -, *, /):"</span></div>
+                <div><span class="keyword">store</span> NUM2 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the second number:"</span></div>
+                <br>
+                <div><span class="keyword">create function</span> <span class="function">calculate</span>(<span class="keyword">receive</span> A, B):</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span> OP <span class="keyword">is</span> <span class="string">"+"</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">+</span> B</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"-"</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">-</span> B</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"*"</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">*</span> B</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"/"</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> A <span class="operator">/</span> B</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">otherwise</span>:</div>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> 0</div>
+                <br>
+                <div><span class="keyword">store</span> RESULT <span class="keyword">as</span> <span class="function">calculate</span>(NUM1, NUM2)</div>
+                <div><span class="function">print</span> <span class="string">"Result:"</span></div>
+                <div><span class="function">print</span> RESULT</div>
             </div>
             <div class="products-content">
                 <div class="products-video">
@@ -401,6 +537,14 @@
         </div>
     </div>
 
+    <div class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                We bring ideas that shape the future to life.
+            </div>
+        </div>
+    </div>
+
     <div class="team-section">
         <div class="container">
             <div class="team-title">MEET OUR TEAM</div>
@@ -419,6 +563,30 @@
                     <div class="title">Co-founder & Product Lead</div>
                     <div class="team-description">
                         Hi, I'm Yingisani Mabaso, a computer engineering student at the University of Pretoria. As a co-founder of Modern Edge Technology, I'm passionate about exploring how technology can improve lives, and I enjoy working across both the technical and creative sides of our projects.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-title">CONTACT US</div>
+            <div class="contact-members">
+                <div class="contact-member">
+                    <h3>Sean Bampoe</h3>
+                    <div class="role">Co-founder & Lead Developer</div>
+                    <div class="contact-info">
+                        <p><strong>Cell:</strong> +27 76 543 0705</p>
+                        <p><strong>Email:</strong> seanbampoe@modernedgetech.co.za</p>
+                    </div>
+                </div>
+                <div class="contact-member">
+                    <h3>Yingisani Mabaso</h3>
+                    <div class="role">Co-founder & Product Lead</div>
+                    <div class="contact-info">
+                        <p><strong>Cell:</strong> +27 76 757 0741</p>
+                        <p><strong>Email:</strong> yingimabaso@modernedgetech.co.za</p>
                     </div>
                 </div>
             </div>
