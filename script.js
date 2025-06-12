@@ -76,13 +76,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add parallax effect to background video
-    const backgroundVideo = document.querySelector('.background-clip');
-    if (backgroundVideo) {
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            backgroundVideo.style.transform = `translateY(${rate}px)`;
+    // Optional: Add subtle tilt effect on mouse move
+    const videoFrame = document.querySelector('.video-frame');
+    if (videoFrame) {
+        videoFrame.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            videoFrame.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+        
+        videoFrame.addEventListener('mouseleave', () => {
+            videoFrame.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
         });
     }
     
