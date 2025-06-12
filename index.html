@@ -6,10 +6,10 @@
     <title>Modern Edge Technologies</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="Images/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Images/logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="Images/logo.png">
-    <link rel="shortcut icon" href="Images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/black-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/black-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Images/black-logo.png">
+    <link rel="shortcut icon" href="Images/black-logo.png">
     <style>
         * {
             margin: 0;
@@ -19,7 +19,7 @@
 
         body {
             font-family: Arial, sans-serif;
-            padding-top: 90px; /* Add padding to account for fixed header */
+            padding-top: 90px;
         }
 
         .hero-section {
@@ -41,30 +41,34 @@
         .hero-container {
             width: 100%;
             height: 100vh;
+            /* Removed background overlay */
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .background-clip {
             position: absolute;
-            right: 0;
-            bottom: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: -1;
         }
 
-        @media (min-aspect-ratio: 16/9) {
-            .background-clip {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        @media (max-aspect-ratio: 16/9) {
-            .background-clip {
-                width: auto;
-                height: 100%;
-            }
+        /* Debug styles */
+        .video-debug {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.9);
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 1000;
         }
 
         .header {
@@ -132,6 +136,7 @@
             justify-content: center;
             padding: 50px 0;
             width: 100%;
+            z-index: 1;
         }
 
         .hero-image {
@@ -372,7 +377,10 @@
 
     <div class="hero-section">
         <div class="hero-container">
-            <video autoplay loop muted playsinline class="background-clip">
+            <div class="video-debug" id="videoStatus">
+                Video Status: Loading...
+            </div>
+            <video autoplay loop muted playsinline class="background-clip" id="heroVideo">
                 <source src="Videos/ideas.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -433,5 +441,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const video = document.getElementById('heroVideo');
+        const status = document.getElementById('videoStatus');
+        
+        video.addEventListener('loadstart', () => {
+            status.textContent = 'Video Status: Loading started...';
+        });
+        
+        video.addEventListener('canplay', () => {
+            status.textContent = 'Video Status: Can play - Video loaded successfully!';
+        });
+        
+        video.addEventListener('error', (e) => {
+            status.textContent = 'Video Status: ERROR - Cannot load video file!';
+            console.error('Video error:', e);
+        });
+        
+        video.addEventListener('play', () => {
+            status.textContent = 'Video Status: Playing!';
+        });
+        
+        // Check if video source exists
+        fetch('Videos/ideas.mp4')
+            .then(response => {
+                if (!response.ok) {
+                    status.textContent = 'Video Status: ERROR - Video file not found!';
+                }
+            })
+            .catch(error => {
+                status.textContent = 'Video Status: ERROR - Cannot access video file!';
+            });
+    </script>
 </body>
 </html>
