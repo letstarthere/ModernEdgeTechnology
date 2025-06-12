@@ -23,7 +23,7 @@
         }
 
         .hero-section {
-            background-color: #000000;
+            background-color: transparent; /* Changed from #000000 to see if this was covering */
             color: white;
             min-height: 100vh;
             position: relative;
@@ -137,6 +137,7 @@
             padding: 50px 0;
             width: 100%;
             z-index: 1;
+            background-color: rgba(255, 0, 0, 0.3); /* Temporary red overlay to see if this div is covering */
         }
 
         .hero-image {
@@ -462,6 +463,26 @@
         video.addEventListener('play', () => {
             status.textContent = 'Video Status: Playing!';
         });
+        
+        video.addEventListener('loadedmetadata', () => {
+            status.innerHTML = `Video Status: Playing!<br>
+                               Duration: ${video.duration}s<br>
+                               Dimensions: ${video.videoWidth}x${video.videoHeight}<br>
+                               Current Time: ${video.currentTime}s`;
+        });
+        
+        video.addEventListener('timeupdate', () => {
+            if (video.currentTime > 0) {
+                status.innerHTML = `Video Status: Playing!<br>
+                                   Duration: ${video.duration.toFixed(1)}s<br>
+                                   Dimensions: ${video.videoWidth}x${video.videoHeight}<br>
+                                   Current Time: ${video.currentTime.toFixed(1)}s<br>
+                                   <strong>Video is actively playing!</strong>`;
+            }
+        });
+        
+        // Add a temporary bright border to see if video element is positioned correctly
+        video.style.border = '5px solid red';
         
         // Check if video source exists
         fetch('Videos/ideas.mp4')
