@@ -1,5 +1,6 @@
 // Header scroll transformation
 document.addEventListener('DOMContentLoaded', function() {
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
     const header = document.getElementById('header');
     let lastScrollTop = 0;
     
@@ -76,19 +77,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Optional: Add subtle tilt effect on mouse move
-    const videoFrame = document.querySelector('.video-frame');
-    if (videoFrame) {
-        videoFrame.addEventListener('mousemove', (e) => {
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            videoFrame.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        });
-        
-        videoFrame.addEventListener('mouseleave', () => {
-            videoFrame.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
-        });
-    }
     
     // Add fade-in animation for sections
     const observerOptions = {
@@ -188,6 +176,112 @@ document.addEventListener('DOMContentLoaded', function() {
             ticking = true;
         }
     });
+
+
+    // Journey Animation
+    function initJourneyAnimation() {
+        const journeyPath = document.querySelector('.journey-path .path');
+        const journeyMarker = document.querySelector('.journey-marker');
+        const sections = document.querySelectorAll('.products-section, .about-section, .team-section, .contact-section');
+        
+        // Create section indicators
+        sections.forEach((section, index) => {
+            const indicator = document.createElement('div');
+            indicator.className = 'section-indicator';
+            document.querySelector('.journey-container').appendChild(indicator);
+            
+            // Position indicators along the path
+            gsap.set(indicator, {
+                motionPath: {
+                    path: journeyPath,
+                    align: journeyPath,
+                    alignOrigin: [0.5, 0.5],
+                    start: index * 0.25,
+                    end: index * 0.25
+                }
+            });
+        });
+
+        // Set up the scroll animation timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                markers: false // Set to true for debugging
+            }
+        });
+
+        // Animate the path drawing
+        tl.fromTo(journeyPath, 
+            { strokeDashoffset: 1000 },
+            { strokeDashoffset: 0, duration: 1 },
+            0
+        );
+
+        // Animate the marker along the path
+        tl.to(journeyMarker, {
+            motionPath: {
+                path: journeyPath,
+                align: journeyPath,
+                alignOrigin: [0.5, 0.5]
+            },
+            ease: "none"
+        }, 0);
+
+        // Section animations
+        sections.forEach(section => {
+            const heading = section.querySelector('h1, h2, h3, .products-title, .team-title, .contact-title, .about-content');
+            
+            if (heading) {
+                // Split heading into characters for animation
+                const text = heading.textContent;
+                heading.innerHTML = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    const char = document.createElement('span');
+                    char.className = 'char';
+                    char.textContent = text[i];
+                    heading.appendChild(char);
+                }
+                
+                // Animate when section comes into view
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top 70%",
+                    onEnter: () => {
+                        gsap.to(section.querySelectorAll('.char'), {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.3,
+                            stagger: 0.05,
+                            ease: "back.out"
+                        });
+                        
+                        // Pulse the corresponding indicator
+                        const indicatorIndex = Array.from(sections).indexOf(section);
+                        const indicator = document.querySelectorAll('.section-indicator')[indicatorIndex];
+                        gsap.to(indicator, {
+                            scale: 1.5,
+                            duration: 0.5,
+                            yoyo: true,
+                            repeat: 1
+                        });
+                    },
+                    onLeaveBack: () => {
+                        gsap.set(section.querySelectorAll('.char'), {
+                            y: 20,
+                            opacity: 0
+                        });
+                    }
+                });
+            }
+        });
+    }
+
+    // Call this function at the end of your DOMContentLoaded event listener
+    initJourneyAnimation();
     
     // Initial call to set proper header state
     updateHeaderTextColor();

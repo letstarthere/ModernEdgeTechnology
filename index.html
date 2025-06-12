@@ -13,7 +13,10 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/MotionPathPlugin.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -41,6 +44,14 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="journey-container">
+        <svg class="journey-path" viewBox="0 0 1000 3000" preserveAspectRatio="none">
+            <path class="path" d="M500,100 C700,300 600,700 500,1100 C400,1500 600,1900 500,2300 C400,2700 600,2900 500,2900" 
+                fill="none" stroke="var(--primary-1)" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <div class="journey-marker"></div>
     </div>
 
     <div class="products-section" id="products">
