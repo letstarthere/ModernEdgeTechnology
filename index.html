@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Original Header -->
     <div class="header" id="header">
         <div class="header-content">
             <img src="Images/logo.png" alt="Logo" class="logo">
@@ -32,155 +33,159 @@
         </div>
     </div>
 
-    <div class="hero-section">
-        <div class="hero-container">
-            <div class="video-container">
-                <div class="video-frame">
-                    <video autoplay loop muted playsinline class="hero-video">
-                        <source src="Videos/ideas.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="video-overlay"></div>
-                </div>
-            </div>
+    <!-- Nicepage Content -->
+    <section class="hero-section" id="block-2">
+      <div class="hero-video-container">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="Videos/ideas.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <p>We bring ideas that shape the future to life.</p>
+          <img src="Images/plant.png" alt="" class="hero-image">
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="products-section" id="products">
-        <div class="container">
-            <div class="products-title">EXPLORE OUR PRODUCTS</div>
-            <div class="ringa-logo">
-                <img src="Images/ringa.png" alt="Ringa Logo">
-            </div>
-            <div class="code-sample">
-                <pre><span class="comment">// Simple calculator in Lingo</span>
-<span class="keyword">store</span> NUM1 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the first number:"</span>
-<span class="keyword">store</span> OP <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the operation (+, -, *, /):"</span>
-<span class="keyword">store</span> NUM2 <span class="keyword">as</span> <span class="function">input</span> <span class="keyword">of</span> <span class="string">"Enter the second number:"</span>
+    <section class="mission-section">
+      <div class="container">
+        <p class="mission-text">OUR MISSION</p>
+      </div>
+    </section>
 
-<span class="keyword">create function</span> <span class="function">calculate</span>(<span class="keyword">receive</span> A, B):
-    <span class="keyword">if</span> OP <span class="keyword">is</span> <span class="string">"+"</span>:
-        <span class="keyword">return</span> A <span class="operator">+</span> B
-    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"-"</span>:
-        <span class="keyword">return</span> A <span class="operator">-</span> B
-    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"*"</span>:
-        <span class="keyword">return</span> A <span class="operator">*</span> B
-    <span class="keyword">otherwise if</span> OP <span class="keyword">is</span> <span class="string">"/"</span>:
-        <span class="keyword">return</span> A <span class="operator">/</span> B
-    <span class="keyword">otherwise</span>:
-        <span class="keyword">return</span> 0
-
-<span class="keyword">store</span> RESULT <span class="keyword">as</span> <span class="function">calculate</span>(NUM1, NUM2)
-<span class="function">print</span> <span class="string">"Result:"</span>
-<span class="function">print</span> RESULT</pre>
-            </div>
-            <div class="products-content">
-                <div class="products-video">
-                    <video autoplay muted loop playsinline>
-                        <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="products-text">
-                    <div class="why-ringa">
-                        <h3>Why Ringa?</h3>
-                        <ul>
-                            <li><strong>Code in English</strong> – No confusing syntax, just clear instructions.</li>
-                            <li><strong>Build Logic Early</strong> – Develop critical thinking from a young age.</li>
-                            <li><strong>Made for Classrooms</strong> – Designed with high school learners in mind.</li>
-                            <li><strong>Real Coding Output</strong> – See your logic come alive instantly.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="products-title">EXPLORE OUR PRODUCTS</div>
+        <img class="ringa-logo" src="Images/ringa.png" alt="Ringa Logo">
+        
+        <div class="products-video-container">
+          <video autoplay muted loop playsinline>
+            <source src="Videos/Ringa-Product-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
         </div>
-    </div>
+        
+        <p class="code-sample-title">HERE'S AN EXAMPLE OF RINGA</p>
+        
+        <div class="code-sample-box">
+          <pre><code>// Simple calculator in Lingo
+store NUM1 as input of "Enter the first number:"
+store OP as input of "Enter the operation (+, -, *, /):"
+store NUM2 as input of "Enter the second number:"
 
-    <div class="about-section" id="about">
-        <div class="container">
-            <div class="about-content">
-                We bring ideas that shape the future to life.
-            </div>
+create function calculate(receive A, B):
+    if OP is "+":
+        return A + B
+    otherwise if OP is "-":
+        return A - B
+    otherwise if OP is "*":
+        return A * B
+    otherwise if OP is "/":
+        return A / B
+    otherwise:
+        return 0
+
+store RESULT as calculate(NUM1, NUM2)
+print "Result:"
+print RESULT</code></pre>
         </div>
-    </div>
-
-    <div class="team-section">
-        <div class="container">
-            <div class="team-title">MEET OUR TEAM</div>
-            <div class="team-images">
-                <div class="team-member">
-                    <img src="Images/my-picture.png" alt="Sean Bampoe">
-                    <h3>Sean Bampoe</h3>
-                    <div class="title">Co-founder & Lead Developer</div>
-                    <div class="team-description">Hi, I'm Sean Bampoe, a computer engineering student with a 
-deep passion for building innovative tech. As the lead 
-developer and co-founder of Modern Edge Technology, I focus 
-on turning ideas into working products through code, 
-creativity, and a problem-solving mindset.</div>
-                </div>
-                <div class="team-member">
-                    <img src="Images/friend-picture.png" alt="Yingisani Mabaso">
-                    <h3>Yingisani Mabaso</h3>
-                    <div class="title">Co-founder & Product Lead</div>
-                    <div class="team-description">Hi, I'm Yingisani Mabaso, a computer engineering student 
-at the University of Pretoria. As a co-founder of Modern 
-Edge Technology, I'm passionate about exploring how 
-technology can improve lives, and I enjoy working across 
-both the technical and creative sides of our projects.</div>
-                </div>
-            </div>
+        
+        <div class="features-list">
+          <p>Code in English – No confusing syntax, just clear instructions.</p>
+          <p>Build Logic Early – Develop critical thinking from a young age.</p>
+          <p>Made for Classrooms – Designed with high school learners in mind.</p>
+          <p>Real Coding Output – See your logic come alive instantly.</p>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div class="contact-section" id="contact">
+    <section class="team-section" id="about">
+      <div class="container">
+        <div class="team-title">MEET OUR TEAM</div>
+        
+        <div class="team-members">
+          <div class="team-member">
+            <img src="Images/my-picture.png" alt="Sean Bampoe">
+            <div class="member-info">
+              <h3>Sean Bampoe</h3>
+              <p class="role">Co-founder & Lead Developer</p>
+            </div>
+            <div class="member-description">
+              <p>Hi, I'm Sean Bampoe, a computer engineering student with a deep passion for building innovative tech. As the lead developer and co-founder of Modern Edge Technology, I focus on turning ideas into working products through code, creativity, and a problem-solving mindset.</p>
+            </div>
+          </div>
+          
+          <div class="team-member">
+            <img src="Images/friend-picture.png" alt="Yingisani Mabaso">
+            <div class="member-info">
+              <h3>Yingisani Mabaso</h3>
+              <p class="role">Co-founder & Product Lead</p>
+            </div>
+            <div class="member-description">
+              <p>Hi, I'm Yingisani Mabaso, a computer engineering student at the University of Pretoria. As a co-founder of Modern Edge Technology, I'm passionate about exploring how technology can improve lives, and I enjoy working across both the technical and creative sides of our projects.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
         <div class="contact-title">CONTACT US</div>
+        
         <div class="contact-members">
-            <div class="contact-member">
-                <h3>Sean Bampoe</h3>
-                <div class="role">Co-founder & Lead Developer</div>
-                <p><strong>Cell:</strong> +27 76 543 0705</p>
-                <p><strong>Email:</strong> seanbampoe@modernedgetech.co.za</p>
+          <div class="contact-member">
+            <h3>Sean Bampoe</h3>
+            <div class="role">Co-founder & Lead Developer</div>
+            <div class="contact-info">
+              <p><strong>Cell:</strong> +27 76 543 0705</p>
+              <p><strong>Email:</strong> seanbampoe@modernedgetech.co.za</p>
             </div>
-            <div class="contact-divider"></div>
-            <div class="contact-member">
-                <h3>Yingisani Mabaso</h3>
-                <div class="role">Co-founder & Product Lead</div>
-                <p><strong>Cell:</strong> +27 76 757 0741</p>
-                <p><strong>Email:</strong> yingimabaso@modernedgetech.co.za</p>
+          </div>
+          
+          <div class="contact-divider"></div>
+          
+          <div class="contact-member">
+            <h3>Yingisani Mabaso</h3>
+            <div class="role">Co-founder & Product Lead</div>
+            <div class="contact-info">
+              <p><strong>Cell:</strong> +27 76 757 0741</p>
+              <p><strong>Email:</strong> yingimabaso@modernedgetech.co.za</p>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-<footer class="u-align-center u-black u-clearfix u-footer u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <div class="u-clearfix u-group-elements u-group-elements-1">
-          <a href="" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
-            <img src="images/logo.png" class="u-logo-image u-logo-image-1">
-          </a>
-          <p class="u-text u-text-1">Modern Edge Technology </p>
+    <footer class="footer-section">
+      <div class="footer-content">
+        <div class="footer-left">
+          Hatfield, Pretoria<br>
+          South Africa
         </div>
-        <div class="u-clearfix u-group-elements u-group-elements-2">
-          <a href="" class="u-image u-logo u-image-2" data-image-width="512" data-image-height="512">
-            <img src="images/instagram-logo.png" class="u-logo-image u-logo-image-2">
-          </a>
-          <p class="u-text u-text-2">Instagram</p>
-          <p class="u-text u-text-3">Youtube</p>
-          <a href="" class="u-image u-logo u-image-3" data-image-width="1400" data-image-height="980">
-            <img src="images/youtube-logo.png" class="u-logo-image u-logo-image-3">
-          </a>
-          <a href="" class="u-image u-logo u-image-4" data-image-width="1000" data-image-height="1000">
-            <img src="images/linkedin-logo.png" class="u-logo-image u-logo-image-4">
-          </a>
-          <p class="u-text u-text-4">Linkedin</p>
+        <div class="footer-center">
+          <div class="footer-logo">
+            <img src="Images/logo.png" alt="Logo" class="footer-logo-img">
+            <span>Modern Edge Technology</span>
+          </div>
         </div>
-        <p class="u-text u-text-5">Hatfield, Pretoria South Africa</p>
-        <p class="u-small-text u-text u-text-variant u-text-6"> Copyright © 2025 Modern Edge Technology Inc. All rights reserved.</p>
-      </div></footer>
+        <div class="footer-right">
+          <div class="social-links">
+            <a href="#" class="social-link"><img src="Images/instagram-logo.png" alt="Instagram"> Instagram</a>
+            <a href="#" class="social-link"><img src="Images/linkedin-logo.png" alt="LinkedIn"> LinkedIn</a>
+            <a href="#" class="social-link"><img src="Images/youtube-logo.png" alt="YouTube"> YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        Copyright © 2025 Modern Edge Technology Inc. All rights reserved.
+      </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
