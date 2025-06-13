@@ -289,9 +289,39 @@ body {
     letter-spacing: 2px;
 }
 
+/*footer*/
+
 .footer-section {
     background-color: black;
     color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
 }
 
 .social-link {
@@ -306,6 +336,12 @@ body {
     width: 1em;
     height: 1em;
     object-fit: contain;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #333;
 }
 
 .products-content {
