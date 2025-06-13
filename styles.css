@@ -53,6 +53,8 @@ body {
     padding-top: 0;
 }
 
+
+
 /* New Hero Section Styles */
 .hero-section {
     background-color: #f5f5fa;
@@ -265,6 +267,38 @@ body {
     text-align: center;
     margin-bottom: 40px;
     font-family: 'Work Sans', sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Global title styles */
+.products-title,
+.team-title,
+.contact-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: 'Work Sans', sans-serif;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-link img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .products-content {
@@ -734,83 +768,3 @@ html {
     }
 }
 
-/* Journey Animation Styles */
-.journey-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.journey-path {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.journey-path .path {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 0.5s ease-out;
-}
-
-.journey-marker {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background-color: var(--primary-1);
-    border-radius: 50%;
-    z-index: 3;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 15px rgba(57, 12, 185, 0.7);
-    border: 2px solid var(--white);
-}
-
-/* Add section indicators */
-.section-indicator {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background-color: var(--accent-1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(228, 40, 164, 0.7);
-}
-
-/* Adjust existing sections for journey */
-.products-section,
-.about-section,
-.team-section,
-.contact-section {
-    position: relative;
-    z-index: 5;
-    background-color: var(--white);
-}
-
-/* Make sure content appears above journey */
-.container {
-    position: relative;
-    z-index: 10;
-}
-
-@media (max-width: 768px) {
-    .journey-path .path {
-        stroke-width: 3px;
-    }
-    
-    .journey-marker {
-        width: 12px;
-        height: 12px;
-    }
-    
-    .section-indicator {
-        width: 8px;
-        height: 8px;
-    }
-}
