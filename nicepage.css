@@ -46065,15 +46065,26 @@ a.u-link.u-text-hover-color-var:hover {
 
 /*end-variables sitestylecss*/
  .u-header {
-  background-image: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .u-header .u-sheet-1 {
-  min-height: 77px;
+  min-height: 70px;
+}
+
+.u-header .u-shape-1 {
+  --radius: 10px;
+  height: 55px;
+  margin-top: 26px;
+  margin-bottom: 0;
+  background-image: none;
 }
 
 .u-header .u-menu-1 {
-  margin: 22px 0 0 auto;
+  margin: -47px 29px 0 auto;
 }
 
 .u-header .u-nav-1 {
@@ -46101,11 +46112,22 @@ a.u-link.u-text-hover-color-var:hover {
 .u-header .u-image-2 {
   width: 47px;
   height: 47px;
-  margin: -43px auto 15px 19px;
+  margin: -41px auto -7px 17px;
 }
 @media (max-width: 1199px) {
+  .u-header .u-sheet-1 {
+    min-height: 118px;
+  }
+
+  .u-header .u-shape-1 {
+    margin-top: 31px;
+  }
+
   .u-header .u-menu-1 {
     width: auto;
+    margin-top: -46px;
+    margin-right: auto;
+    margin-left: 651px;
   }
 
   .u-header .u-image-1 {
@@ -46113,22 +46135,70 @@ a.u-link.u-text-hover-color-var:hover {
   }
 
   .u-header .u-image-2 {
-    margin-top: -43px;
+    margin-top: -41px;
+    margin-bottom: 35px;
   }
 }
+@media (max-width: 991px) {
+  .u-header .u-sheet-1 {
+    min-height: 317px;
+  }
 
+  .u-header .u-shape-1 {
+    margin-top: 43px;
+  }
 
-@media (max-width: 575px) {
   .u-header .u-menu-1 {
-    margin-top: 24px;
+    margin-top: -43px;
+    margin-right: 20px;
+    margin-left: auto;
+  }
+
+  .u-header .u-image-2 {
+    margin-top: -40px;
+    margin-bottom: 60px;
+    margin-left: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-sheet-1 {
+    min-height: 73px;
+  }
+
+  .u-header .u-shape-1 {
+    margin-top: 15px;
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -47px;
+  }
+
+  .u-header .u-image-2 {
+    margin-top: -37px;
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 575px) {
+  .u-header .u-sheet-1 {
+    min-height: 301px;
+  }
+
+  .u-header .u-shape-1 {
+    height: 46px;
+    margin-top: 31px;
+  }
+
+  .u-header .u-menu-1 {
+    margin-top: -39px;
+    margin-right: 14px;
   }
 
   .u-header .u-image-2 {
     width: 36px;
     height: 36px;
-    margin-top: -36px;
-    margin-bottom: 21px;
-    margin-left: 0;
+    margin-top: -34px;
+    margin-bottom: 60px;
+    margin-left: 8px;
   }
 }
  .u-footer {
@@ -46136,13 +46206,13 @@ a.u-link.u-text-hover-color-var:hover {
 }
 
 .u-footer .u-sheet-1 {
-  min-height: 467px;
+  min-height: 483px;
 }
 
 .u-footer .u-image-1 {
   width: 100px;
   height: 100px;
-  margin: 2px auto 0 336px;
+  margin: 18px auto 0 315px;
 }
 
 .u-footer .u-logo-image-1 {
@@ -46152,13 +46222,13 @@ a.u-link.u-text-hover-color-var:hover {
 
 .u-footer .u-text-1 {
   font-size: 1.875rem;
-  margin: -74px 341px 0 440px;
+  margin: -74px 315px 0 398px;
 }
 
 .u-footer .u-image-2 {
   width: 63px;
   height: 63px;
-  margin: 83px 337px 0 auto;
+  margin: 81px 337px 0 auto;
 }
 
 .u-footer .u-logo-image-2 {
@@ -46213,17 +46283,20 @@ a.u-link.u-text-hover-color-var:hover {
 }
 @media (max-width: 1199px) {
   .u-footer .u-image-1 {
-    margin-left: 240px;
+    margin-top: 16px;
+    margin-left: 214px;
   }
 
   .u-footer .u-text-1 {
+    width: auto;
     margin-top: -74px;
-    margin-right: 241px;
-    margin-left: 340px;
+    margin-right: 214px;
+    margin-left: 299px;
   }
 
   .u-footer .u-image-2 {
     width: 63px;
+    margin-top: 84px;
     margin-right: 278px;
   }
 
@@ -46266,37 +46339,31 @@ a.u-link.u-text-hover-color-var:hover {
 }
 @media (max-width: 991px) {
   .u-footer .u-image-1 {
-    margin-top: 0;
-    margin-left: 147px;
+    margin-top: 14px;
+    margin-left: 101px;
   }
 
   .u-footer .u-text-1 {
-    width: auto;
-    margin-top: -69px;
-    margin-right: 114px;
-    margin-left: 247px;
+    margin-right: 101px;
+    margin-left: 192px;
   }
 
   .u-footer .u-image-2 {
-    margin-top: 80px;
+    margin-top: 85px;
     margin-right: 213px;
   }
 
   .u-footer .u-text-2 {
-    width: auto;
-    margin-top: -50px;
-    margin-right: 82px;
-    margin-left: 524px;
+    margin-right: 8px;
+    margin-left: 598px;
   }
 
   .u-footer .u-text-3 {
-    width: auto;
-    margin-right: 100px;
-    margin-left: 524px;
+    margin-right: 26px;
+    margin-left: 598px;
   }
 
   .u-footer .u-image-3 {
-    margin-top: -37px;
     margin-right: 218px;
   }
 
@@ -46305,38 +46372,44 @@ a.u-link.u-text-hover-color-var:hover {
   }
 
   .u-footer .u-text-4 {
-    width: auto;
-    margin-top: -37px;
-    margin-right: 100px;
-    margin-left: 524px;
+    margin-right: 26px;
+    margin-left: 598px;
   }
 
   .u-footer .u-text-5 {
-    width: auto;
-    margin-top: -134px;
-    margin-right: 394px;
-    margin-left: 68px;
+    margin-right: 461px;
+    margin-left: 0;
   }
 
   .u-footer .u-text-6 {
-    margin: 130px 113px 34px 126px;
+    margin-right: 113px;
+    margin-left: 126px;
   }
 }
 @media (max-width: 767px) {
+  .u-footer .u-sheet-1 {
+    min-height: 453px;
+  }
+
+  .u-footer .u-image-1 {
+    margin-top: 13px;
+    margin-left: 20px;
+  }
+
   .u-footer .u-text-1 {
     font-size: 1.6666666666666665rem;
-    margin-top: 20px;
-    margin-right: 24px;
-    margin-left: 157px;
+    margin-top: -72px;
+    margin-right: 20px;
+    margin-left: 93px;
   }
 
   .u-footer .u-image-2 {
+    margin-top: 84px;
     margin-right: 160px;
   }
 
   .u-footer .u-text-2 {
     font-size: 1.3333333333333333rem;
-    margin-top: -50px;
     margin-right: 0;
     margin-left: 426px;
   }
@@ -46348,7 +46421,6 @@ a.u-link.u-text-hover-color-var:hover {
   }
 
   .u-footer .u-image-3 {
-    margin-top: -37px;
     margin-right: 164px;
   }
 
@@ -46358,16 +46430,13 @@ a.u-link.u-text-hover-color-var:hover {
 
   .u-footer .u-text-4 {
     font-size: 1.3333333333333333rem;
-    margin-top: -37px;
-    margin-right: 10px;
-    margin-left: 434px;
+    margin-right: 0;
+    margin-left: 444px;
   }
 
   .u-footer .u-text-5 {
     font-size: 1.6666666666666665rem;
-    margin-top: -134px;
     margin-right: 281px;
-    margin-left: 0;
   }
 
   .u-footer .u-text-6 {
@@ -46377,69 +46446,78 @@ a.u-link.u-text-hover-color-var:hover {
 }
 @media (max-width: 575px) {
   .u-footer .u-sheet-1 {
-    min-height: 619px;
+    min-height: 502px;
   }
 
   .u-footer .u-image-1 {
-    margin-top: 13px;
+    margin-top: 6px;
     margin-left: auto;
   }
 
   .u-footer .u-text-1 {
-    margin-top: 0;
+    margin-top: -10px;
     margin-left: 0;
     margin-right: 0;
   }
 
   .u-footer .u-image-2 {
-    margin-top: 103px;
+    width: 43px;
+    height: 43px;
+    margin-top: 45px;
     margin-right: auto;
-    margin-left: 88px;
+    margin-left: 191px;
   }
 
   .u-footer .u-text-2 {
-    margin-top: -48px;
-    margin-right: 75px;
-    margin-left: 151px;
+    width: auto;
+    margin-top: -38px;
+    margin-left: 226px;
   }
 
   .u-footer .u-text-3 {
-    margin-top: 14px;
-    margin-right: 93px;
-    margin-left: 151px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 226px;
   }
 
   .u-footer .u-image-3 {
-    margin-top: -34px;
+    width: 31px;
+    height: 22px;
+    margin-top: -28px;
     margin-right: auto;
-    margin-left: 96px;
+    margin-left: 197px;
   }
 
   .u-footer .u-image-4 {
-    margin-top: 14px;
+    width: 24px;
+    height: 24px;
+    margin-top: 21px;
     margin-right: auto;
-    margin-left: 100px;
+    margin-left: 201px;
   }
 
   .u-footer .u-text-4 {
-    margin-top: -34px;
-    margin-right: 93px;
-    margin-left: 151px;
+    width: auto;
+    margin-top: -29px;
+    margin-right: 24px;
+    margin-left: 231px;
   }
 
   .u-footer .u-text-5 {
     font-size: 1.25rem;
-    width: 172px;
-    margin-top: -234px;
-    margin-left: auto;
-    margin-right: auto;
+    width: auto;
+    margin-top: -102px;
+    margin-right: 162px;
   }
 
   .u-footer .u-text-6 {
-    margin: 218px 0 60px;
+    width: auto;
+    margin: 100px 12px 42px;
   }
 }
 
+ /*begin-variables custom-site-css*/<link rel="stylesheet" href="styles.css">
+/*end-variables custom-site-css*/
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
  /*end-variables base-font-size*/
