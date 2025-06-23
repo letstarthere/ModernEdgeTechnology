@@ -46076,7 +46076,7 @@ a.u-link.u-text-hover-color-var:hover {
 }
 
 .u-header .u-shape-1 {
-  --radius: 10px;
+  --radius: 25px;
   height: 55px;
   margin-top: 26px;
   margin-bottom: 0;
@@ -46126,8 +46126,7 @@ a.u-link.u-text-hover-color-var:hover {
   .u-header .u-menu-1 {
     width: auto;
     margin-top: -46px;
-    margin-right: auto;
-    margin-left: 651px;
+    margin-right: 17px;
   }
 
   .u-header .u-image-1 {
@@ -46151,7 +46150,6 @@ a.u-link.u-text-hover-color-var:hover {
   .u-header .u-menu-1 {
     margin-top: -43px;
     margin-right: 20px;
-    margin-left: auto;
   }
 
   .u-header .u-image-2 {
@@ -46170,11 +46168,11 @@ a.u-link.u-text-hover-color-var:hover {
   }
 
   .u-header .u-menu-1 {
-    margin-top: -47px;
+    margin-top: -45px;
   }
 
   .u-header .u-image-2 {
-    margin-top: -37px;
+    margin-top: -40px;
     margin-bottom: 8px;
   }
 }
