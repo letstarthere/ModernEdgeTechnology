@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Contact Us | Modern Edge Technology</title>
+    <meta name="description" content="Get in touch with Modern Edge Technology for your web, app, and AI solution needs.">
+    
+    <link rel="icon" type="image/png" href="images/Black_logo.png">
+    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="logo">MODERN EDGE TECHNOLOGIES<span>.</span></a>
+        <nav class="nav">
+            <a href="index.html#services" class="nav-link">
+                <div class="rolling-text">
+                    <span>Services</span>
+                    <span>Services</span>
+                </div>
+            </a>
+            <a href="index.html#projects" class="nav-link">
+                <div class="rolling-text">
+                    <span>Projects</span>
+                    <span>Projects</span>
+                </div>
+            </a>
+            <a href="index.html#about" class="nav-link">
+                <div class="rolling-text">
+                    <span>About</span>
+                    <span>About</span>
+                </div>
+            </a>
+            <a href="contact.html" class="nav-link">
+                <div class="rolling-text">
+                    <span>Contact</span>
+                    <span>Contact</span>
+                </div>
+            </a>
+        </nav>
+        <button class="mobile-menu" aria-label="Toggle mobile menu">
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="close-icon">
+                <div></div>
+                <div></div>
+            </div>
+        </button>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <nav class="mobile-nav">
+            <a href="index.html#services" class="mobile-nav-link">Services</a>
+            <a href="index.html#projects" class="mobile-nav-link">Projects</a>
+            <a href="index.html#about" class="mobile-nav-link">About</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+        <div class="mobile-menu-logo">
+            <img src="images/Black_logo.png" alt="Modern Edge Technologies Logo">
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="contact-page">
+        <!-- Contact Hero -->
+        <section class="contact-hero">
+            <h1 class="contact-title">
+                <span>Let Us Help You</span>
+            </h1>
+            <div class="contact-info">
+                <p>info@modernedge.co.za</p>
+                <p>+27 76 543 0705</p>
+                <p>Hatfield, Pretoria</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-form-section">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="sr-only">Name</label>
+                    <input type="text" id="name" name="name" placeholder="What's your name?" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" name="email" placeholder="What's your email?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="sr-only">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project..." rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2 class="footer-title">MODERN EDGE TECHNOLOGIES.</h2>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="#" class="social-link">Dribbble</a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2026 Modern Edge Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
