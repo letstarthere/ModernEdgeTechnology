@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div id="cursor" class="custom-cursor"></div>
+
     <!-- Header -->
     <header class="header">
         <a href="index.html" class="logo">MODERN EDGE TECHNOLOGIES<span>.</span></a>
@@ -84,18 +87,18 @@
 
         <!-- Contact Form Section -->
         <section class="contact-form-section">
-            <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                    <label for="name" class="sr-only">Name</label>
-                    <input type="text" id="name" name="name" placeholder="What's your name?" required>
+            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mbdyawpv" method="POST">
+                <div class="form-item">
+                    <h3>What's your name?</h3>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <div class="form-group">
-                    <label for="email" class="sr-only">Email</label>
-                    <input type="email" id="email" name="email" placeholder="What's your email?" required>
+                <div class="form-item">
+                    <h3>What's your email?</h3>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="message" class="sr-only">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your project..." rows="6" required></textarea>
+                <div class="form-item">
+                    <h3>Tell us about your project...</h3>
+                    <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>

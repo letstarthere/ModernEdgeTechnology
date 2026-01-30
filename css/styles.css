@@ -103,8 +103,10 @@ body {
     animation: preloaderBg 3s ease-in-out;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     min-width: 100vw;
     min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .preloader-circle {
@@ -487,27 +489,6 @@ body.preloader-active {
     gap: 2rem;
 }
 
-.intro-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 8rem;
-    height: 8rem;
-    background-color: var(--color-black);
-    border-radius: 50%;
-    opacity: 0.15;
-    filter: blur(5rem);
-    z-index: 0;
-    animation: introDecoration 3s ease-in-out 3.2s both;
-}
-
-@media (min-width: 768px) {
-    .intro-decoration {
-        width: 12rem;
-        height: 12rem;
-    }
-}
-
 .intro-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -597,11 +578,6 @@ body.preloader-active {
     }
 }
 
-@keyframes introDecoration {
-    from { transform: scale(0); }
-    to { transform: scale(1); }
-}
-
 @keyframes revealText {
     from { transform: translateY(100%); }
     to { transform: translateY(0); }
@@ -650,7 +626,7 @@ body.preloader-active {
 }
 
 .services-header h2 {
-    font-size: 3rem;
+    font-size: 2.1rem;
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: left;
@@ -682,6 +658,8 @@ body.preloader-active {
     border-bottom: 1px solid var(--color-black);
     transition: all 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -693,6 +671,7 @@ body.preloader-active {
 
 .service-item:hover {
     background-color: var(--color-grey-light);
+    padding-bottom: 5rem;
 }
 
 .service-item:hover h3 {
@@ -705,6 +684,10 @@ body.preloader-active {
     letter-spacing: -0.025em;
     transition: padding-left 0.3s ease;
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -718,6 +701,14 @@ body.preloader-active {
     max-width: 21rem;
     color: var(--color-grey-dark);
     margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.service-item:hover p {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 @media (min-width: 768px) {
@@ -726,20 +717,46 @@ body.preloader-active {
     }
 }
 
-.service-arrow {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-black);
+.service-plus {
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.service-item:hover .service-arrow {
+@media (min-width: 768px) {
+    .service-plus {
+        display: none;
+    }
+}
+
+.service-plus::before,
+.service-plus::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-black);
+    transition: transform 0.3s ease;
+}
+
+.service-plus::before {
+    width: 16px;
+    height: 2px;
+}
+
+.service-plus::after {
+    width: 2px;
+    height: 16px;
+}
+
+.service-item.active {
+    padding-bottom: 5rem;
+}
+
+.service-item.active p {
     opacity: 1;
+    transform: translateY(0);
 }
 
 /* Projects Section */
@@ -761,7 +778,7 @@ body.preloader-active {
 }
 
 .projects-header h2 {
-    font-size: 3rem;
+    font-size: 2.1rem;
     font-weight: 700;
     text-align: left;
 }
@@ -1089,11 +1106,14 @@ body.preloader-active {
 
 .contact-btn:hover {
     padding-left: 3rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .contact-btn:hover::before {
     left: 1rem;
     opacity: 1;
+    color: var(--color-white);
 }
 
 .footer-social {
@@ -1203,56 +1223,109 @@ body.preloader-active {
     opacity: 0;
     animation: ascend 0.8s ease-out forwards;
     animation-delay: 1s;
+    border-top: 1px solid var(--color-black);
 }
 
-.form-group {
-    margin-bottom: 2rem;
+.form-item {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid var(--color-black);
+    position: relative;
+    cursor: pointer;
 }
 
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1.5rem;
-    border: 1px solid var(--color-grey);
-    border-radius: 8px;
-    font-size: 1rem;
+.form-item h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: -0.025em;
+    margin-bottom: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .form-item h3 {
+        font-size: 2rem;
+    }
+}
+
+.form-item input,
+.form-item textarea {
+    border: none;
+    background: transparent;
+    font-size: 1.125rem;
     font-family: inherit;
-    background-color: var(--color-white);
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
+    color: var(--color-black);
     outline: none;
-    border-color: var(--color-black);
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+    resize: vertical;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
+.form-item.focused h3 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-grey-dark);
+}
+
+.form-item.focused input {
+    opacity: 1;
+    height: 2rem;
+    padding: 0.5rem 0;
+}
+
+.form-item.focused textarea {
+    opacity: 1;
+    height: 6rem;
+    padding: 0.5rem 0;
 }
 
 .submit-btn {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: 1.5rem 3rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
+    border: 1px solid var(--color-black);
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.submit-btn::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    padding-left: 3rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.submit-btn:hover::before {
+    left: 1rem;
+    opacity: 1;
+    color: var(--color-white);
 }
 
 @media (min-width: 768px) {
     .submit-btn {
         width: auto;
     }
-}
-
-.submit-btn:hover {
-    transform: scale(1.05);
 }
 
 /* Animations */

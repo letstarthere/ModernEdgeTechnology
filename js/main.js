@@ -27,6 +27,7 @@ class Website {
         this.initParallax();
         this.initContactForm();
         this.initMobileMenu();
+        this.initServiceItems();
     }
 
     // Preloader functionality
@@ -357,3 +358,50 @@ const website = new Website();
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { Website, utils };
 }
+
+// Service items mobile functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const serviceItems = document.querySelectorAll('.service-item');
+    
+    serviceItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                item.classList.toggle('active');
+                
+                // Close other items
+                serviceItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+            }
+        });
+    });
+});
+// Form focus functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const formItems = document.querySelectorAll('.form-item');
+    
+    formItems.forEach(item => {
+        const input = item.querySelector('input, textarea');
+        const title = item.querySelector('h3');
+        
+        if (input && title) {
+            // Click on title to focus input
+            title.addEventListener('click', () => {
+                item.classList.add('focused');
+                input.focus();
+            });
+            
+            input.addEventListener('focus', () => {
+                item.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                if (!input.value) {
+                    item.classList.remove('focused');
+                }
+            });
+        }
+    });
+});
