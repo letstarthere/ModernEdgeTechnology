@@ -405,3 +405,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Form submission handler
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const thankYouMessage = document.getElementById('thank-you-message');
+    
+    if (form && thankYouMessage) {
+        form.addEventListener('submit', (e) => {
+            // Allow Formspree to handle the submission naturally
+            // Show thank you message after a delay to allow submission
+            setTimeout(() => {
+                form.style.display = 'none';
+                thankYouMessage.style.display = 'block';
+            }, 2000);
+        });
+    }
+});
