@@ -40,8 +40,8 @@
             </a>
             <a href="contact.html" class="nav-link">
                 <div class="rolling-text">
-                    <span>Contact</span>
-                    <span>Contact</span>
+                    <span>Contact Us</span>
+                    <span>Contact Us</span>
                 </div>
             </a>
         </nav>
@@ -64,7 +64,7 @@
             <a href="index.html#services" class="mobile-nav-link">Services</a>
             <a href="index.html#projects" class="mobile-nav-link">Projects</a>
             <a href="index.html#about" class="mobile-nav-link">About</a>
-            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
         </nav>
         <div class="mobile-menu-logo">
             <img src="images/Black_logo.png" alt="Modern Edge Technologies Logo">
@@ -87,25 +87,25 @@
 
         <!-- Contact Form Section -->
         <section class="contact-form-section">
-            <form id="contact-form" class="contact-form" action="https://formspree.io/f/mbdyawpv" method="POST">
+            <form action="https://formspree.io/f/mbdyawpv" method="POST" class="contact-form">
                 <div class="form-item">
                     <h3>What's your name?</h3>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" name="name" required>
                 </div>
                 <div class="form-item">
                     <h3>What's your email?</h3>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" name="email" required>
                 </div>
                 <div class="form-item">
                     <h3>Tell us about your project...</h3>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                    <textarea name="message" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-                <div class="thank-you-message" id="thank-you-message">
-                    <h3>Thank You!</h3>
-                    <p>We've received your message and will respond as soon as possible.</p>
-                </div>
+                <button type="submit">Send Message</button>
             </form>
+            <div class="thank-you-message" style="display: none; text-align: center; padding: 3rem 0;">
+                <h3>Thank You!</h3>
+                <p>We've received your message and will respond as soon as possible.</p>
+            </div>
         </section>
     </div>
 

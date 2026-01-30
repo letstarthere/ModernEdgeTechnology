@@ -536,6 +536,12 @@ body.preloader-active {
     }
 }
 
+@media (min-width: 1440px) {
+    .intro-title {
+        font-size: 4rem;
+    }
+}
+
 .intro-line-2 {
     color: var(--color-white);
 }
@@ -547,6 +553,13 @@ body.preloader-active {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+
+@media (min-width: 1440px) {
+    .intro-logo {
+        width: 8rem;
+        height: 8rem;
+    }
 }
 
 .intro-logo img {
@@ -1233,6 +1246,50 @@ body.preloader-active {
     animation: ascend 0.8s ease-out forwards;
     animation-delay: 1s;
     border-top: 1px solid var(--color-black);
+}
+
+.contact-form button {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    border: 1px solid var(--color-black);
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.contact-form button::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    padding-left: 3rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.contact-form button:hover::before {
+    left: 1rem;
+    opacity: 1;
+    color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+    .contact-form button {
+        width: auto;
+    }
 }
 
 .form-item {

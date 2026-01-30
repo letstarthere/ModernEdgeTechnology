@@ -212,50 +212,7 @@ class Website {
 
     // Contact form functionality
     initContactForm() {
-        const form = document.getElementById('contact-form');
-        if (!form) return;
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message')
-            };
-
-            // Simulate form submission
-            this.submitForm(data);
-        });
-    }
-
-    // Simulate form submission (replace with actual API call)
-    submitForm(data) {
-        const submitBtn = document.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-
-        // Simulate API call
-        setTimeout(() => {
-            submitBtn.textContent = 'Message Sent!';
-            submitBtn.style.backgroundColor = '#22c55e';
-            
-            // Reset form
-            document.getElementById('contact-form').reset();
-            
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-                submitBtn.style.backgroundColor = '';
-            }, 3000);
-        }, 1500);
-
-        // Log form data (replace with actual submission logic)
-        console.log('Form submitted:', data);
+        // Form functionality is handled by the DOMContentLoaded event listener below
     }
 
     // Mobile menu functionality
@@ -387,7 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const title = item.querySelector('h3');
         
         if (input && title) {
-            // Click on title to focus input
             title.addEventListener('click', () => {
                 item.classList.add('focused');
                 input.focus();
@@ -404,20 +360,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
-// Form submission handler
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    const thankYouMessage = document.getElementById('thank-you-message');
-    
-    if (form && thankYouMessage) {
-        form.addEventListener('submit', (e) => {
-            // Allow Formspree to handle the submission naturally
-            // Show thank you message after a delay to allow submission
-            setTimeout(() => {
-                form.style.display = 'none';
-                thankYouMessage.style.display = 'block';
-            }, 2000);
-        });
-    }
 });
