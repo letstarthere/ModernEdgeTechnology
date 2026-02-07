@@ -1,0 +1,178 @@
+/* Services Section Updates */
+.service-item {
+    padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+    .service-item {
+        padding: 3rem 1rem;
+    }
+}
+
+.service-item h3 {
+    margin-bottom: 0;
+}
+
+.service-item:hover {
+    padding-bottom: 3rem;
+}
+
+.service-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 1s ease;
+}
+
+.service-item:hover .service-description,
+.service-item.active .service-description {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.service-description p {
+    max-width: 50rem;
+    color: var(--color-grey-dark);
+    margin-bottom: 1.5rem;
+}
+
+.service-btn {
+    background-color: transparent;
+    color: var(--color-black);
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-black);
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-btn:active {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.service-item.active .service-plus::after {
+    transform: rotate(90deg);
+}
+
+/* Mobile Menu Updates */
+.mobile-nav {
+    align-items: flex-start;
+    padding-left: 2rem;
+    gap: 0.2rem;
+}
+
+.mobile-nav-link {
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
+.mobile-menu-overlay {
+    justify-content: flex-start;
+    padding-top: 8rem;
+}
+
+.mobile-menu-logo {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4rem;
+    height: 4rem;
+}
+
+/* Projects Section Updates */
+.project-slide {
+    min-width: 100%;
+    height: 385px;
+}
+
+@media (min-width: 768px) {
+    .project-slide {
+        min-width: 350px;
+        height: 385px;
+    }
+}
+
+.project-slide.lecturai {
+    border: 1px solid white;
+}
+
+.project-slide.lecturai .project-description {
+    color: white;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    z-index: 10;
+}
+
+.project-slide.active .project-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-slide.active img {
+    filter: blur(4px);
+    transition: filter 0.8s ease;
+}
+
+.project-description {
+    color: white;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 90%;
+}
+
+.project-content {
+    z-index: 20;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.project-info {
+    display: none;
+}
+
+.project-info span {
+    display: none;
+}
+
+.project-plus {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
+.project-slide.active .project-plus {
+    background-color: black;
+}
+
+.project-slide.active .project-plus svg {
+    color: white;
+    transform: rotate(45deg);
+}

@@ -61,6 +61,7 @@
     <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/updates.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -93,10 +94,16 @@
                     <span>About</span>
                 </div>
             </a>
-            <a href="contact.html" class="nav-link">
+            <a href="contact/index.html" class="nav-link">
                 <div class="rolling-text">
                     <span>Contact Us</span>
                     <span>Contact Us</span>
+                </div>
+            </a>
+            <a href="referral/index.html" class="nav-link">
+                <div class="rolling-text">
+                    <span>Referral</span>
+                    <span>Referral</span>
                 </div>
             </a>
         </nav>
@@ -119,7 +126,8 @@
             <a href="#services" class="mobile-nav-link">Services</a>
             <a href="#projects" class="mobile-nav-link">Projects</a>
             <a href="#about" class="mobile-nav-link">About</a>
-            <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+            <a href="contact/index.html" class="mobile-nav-link">Contact Us</a>
+            <a href="referral/index.html" class="mobile-nav-link">Referral</a>
         </nav>
         <div class="mobile-menu-logo">
             <img src="images/Black_logo.png" alt="Modern Edge Technologies Logo">
@@ -168,19 +176,31 @@
             <div class="services-list">
                 <article class="service-item">
                     <h3>Web Development<span class="service-plus"></span></h3>
-                    <p>End to end website development tailored to your goals. From simple landing pages to complex, scalable platforms, we design and build fast, secure, and responsive websites. Existing websites can also be redesigned, optimized for performance, SEO, accessibility, and modern user experience standards.</p>
+                    <div class="service-description">
+                        <p>End to end website development tailored to your goals. From simple landing pages to complex, scalable platforms, we design and build fast, secure, and responsive websites. Existing websites can also be redesigned, optimized for performance, SEO, accessibility, and modern user experience standards.</p>
+                        <a href="contact/index.html" class="service-btn">Enquire Now</a>
+                    </div>
                 </article>
                 <article class="service-item">
                     <h3>App Development<span class="service-plus"></span></h3>
-                    <p>Custom mobile and web application development built for real world use. We develop reliable, scalable apps with intuitive interfaces, strong backend systems, and seamless user flows. Whether launching a new product or improving an existing app, the focus is on performance, usability, and long term growth.</p>
+                    <div class="service-description">
+                        <p>Custom mobile and web application development built for real world use. We develop reliable, scalable apps with intuitive interfaces, strong backend systems, and seamless user flows. Whether launching a new product or improving an existing app, the focus is on performance, usability, and long term growth.</p>
+                        <a href="contact/index.html" class="service-btn">Enquire Now</a>
+                    </div>
                 </article>
                 <article class="service-item">
                     <h3>AI and Machine Learning<span class="service-plus"></span></h3>
-                    <p>Intelligent solutions that turn data into value. We design and integrate AI and machine learning systems for automation, predictions, personalization, and decision support. From smart assistants to data driven models, our solutions are practical, ethical, and aligned with business objectives.</p>
+                    <div class="service-description">
+                        <p>Intelligent solutions that turn data into value. We design and integrate AI and machine learning systems for automation, predictions, personalization, and decision support. From smart assistants to data driven models, our solutions are practical, ethical, and aligned with business objectives.</p>
+                        <a href="contact/index.html" class="service-btn">Enquire Now</a>
+                    </div>
                 </article>
                 <article class="service-item">
                     <h3>Digital Identity<span class="service-plus"></span></h3>
-                    <p>Strategic brand and digital presence development. We elevate your brand through refined visual identity, consistent design systems, improved user experience, and strong digital positioning. The goal is a clear, credible, and memorable presence across all digital touchpoints.</p>
+                    <div class="service-description">
+                        <p>Strategic brand and digital presence development. We elevate your brand through refined visual identity, consistent design systems, improved user experience, and strong digital positioning. The goal is a clear, credible, and memorable presence across all digital touchpoints.</p>
+                        <a href="contact/index.html" class="service-btn">Enquire Now</a>
+                    </div>
                 </article>
             </div>
         </section>
@@ -192,60 +212,56 @@
             </div>
             <div class="projects-slider">
                 <div class="projects-track">
-                    <div class="project-slide">
+                    <div class="project-slide" data-project="towapp">
                         <img src="images/towapp.png" alt="TowApp">
+                        <div class="project-overlay">
+                            <p class="project-description">A smart on demand towing platform connecting users directly with nearby tow truck drivers. TowApp offers transparent pricing, real time tracking, and destination based towing, eliminating hidden fees and unnecessary storage costs common in traditional towing services.</p>
+                        </div>
                         <div class="project-content">
-                            <div class="project-info">
-                                <span>On Demand Platform</span>
-                                <h3>TowApp</h3>
-                            </div>
-                            <div class="project-plus">
+                            <button class="project-plus">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide" data-project="ringa">
                         <img src="images/ringa.png" alt="Ringa">
+                        <div class="project-overlay">
+                            <p class="project-description">A communication focused application designed to simplify and enhance real time connections. Ringa prioritizes speed, clarity, and reliability, providing a streamlined experience for users who value efficient digital interaction.</p>
+                        </div>
                         <div class="project-content">
-                            <div class="project-info">
-                                <span>Communication App</span>
-                                <h3>Ringa</h3>
-                            </div>
-                            <div class="project-plus">
+                            <button class="project-plus">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide lecturai" data-project="lecturai">
                         <img src="images/lecturai.png" alt="Lecturai">
+                        <div class="project-overlay">
+                            <p class="project-description">An AI powered educational platform built for university level learning. Lecturai supports structured study, intelligent explanations, and academic growth across technical and scientific disciplines, helping students learn faster and more effectively.</p>
+                        </div>
                         <div class="project-content">
-                            <div class="project-info">
-                                <span>AI Educational Platform</span>
-                                <h3>Lecturai</h3>
-                            </div>
-                            <div class="project-plus">
+                            <button class="project-plus">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div class="project-slide">
+                    <div class="project-slide" data-project="closet">
                         <img src="images/THE_CLOSET_APP.png" alt="Closet App">
+                        <div class="project-overlay">
+                            <p class="project-description">A personal wardrobe management application that helps users organize outfits, plan looks, and make better use of their clothing. Closet App blends simplicity with smart features to improve daily style decisions.</p>
+                        </div>
                         <div class="project-content">
-                            <div class="project-info">
-                                <span>Wardrobe Management</span>
-                                <h3>Closet App</h3>
-                            </div>
-                            <div class="project-plus">
+                            <button class="project-plus">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -272,13 +288,11 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <h2 class="footer-title">MODERN EDGE TECHNOLOGIES.</h2>
-                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <a href="contact/index.html" class="contact-btn">Contact Us</a>
             </div>
             <div class="footer-social">
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">LinkedIn</a>
-                <a href="#" class="social-link">Dribbble</a>
+                <a href="https://www.instagram.com/modernedgetechnology?igsh=NmFjajd6MzJkMjgx" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+                <a href="https://www.linkedin.com/company/modern-edge-technologies/" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
             </div>
         </div>
         <div class="footer-copyright">

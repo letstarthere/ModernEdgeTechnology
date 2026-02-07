@@ -53,12 +53,13 @@ class Website {
         const track = document.querySelector('.projects-track');
         const prevBtn = document.querySelector('.slider-prev');
         const nextBtn = document.querySelector('.slider-next');
+        const slides = document.querySelectorAll('.project-slide');
         
         if (!track || !prevBtn || !nextBtn) return;
 
         let currentIndex = 0;
-        const slides = track.querySelectorAll('.project-slide');
-        const slideWidth = 432; // 400px + 32px gap
+        const isMobile = window.innerWidth < 768;
+        const slideWidth = isMobile ? window.innerWidth : 432;
 
         const updateSlider = () => {
             const translateX = -(currentIndex * slideWidth);
@@ -75,6 +76,33 @@ class Website {
         prevBtn.addEventListener('click', () => {
             if (currentIndex > 0) {
                 currentIndex--;
+                updateSlider();
+            }
+        });
+
+        // Handle project card clicks
+        slides.forEach(slide => {
+            const plusBtn = slide.querySelector('.project-plus');
+            if (plusBtn) {
+                plusBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    slide.classList.toggle('active');
+                    
+                    // Close other slides
+                    slides.forEach(otherSlide => {
+                        if (otherSlide !== slide) {
+                            otherSlide.classList.remove('active');
+                        }
+                    });
+                });
+            }
+        });
+
+        // Recalculate on resize
+        window.addEventListener('resize', () => {
+            const newIsMobile = window.innerWidth < 768;
+            const newSlideWidth = newIsMobile ? window.innerWidth : 432;
+            if (newSlideWidth !== slideWidth) {
                 updateSlider();
             }
         });
