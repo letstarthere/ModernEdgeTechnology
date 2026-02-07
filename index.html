@@ -88,12 +88,6 @@
                     <span>Projects</span>
                 </div>
             </a>
-            <a href="#about" class="nav-link">
-                <div class="rolling-text">
-                    <span>About</span>
-                    <span>About</span>
-                </div>
-            </a>
             <a href="contact/index.html" class="nav-link">
                 <div class="rolling-text">
                     <span>Contact Us</span>
@@ -125,7 +119,6 @@
         <nav class="mobile-nav">
             <a href="#services" class="mobile-nav-link">Services</a>
             <a href="#projects" class="mobile-nav-link">Projects</a>
-            <a href="#about" class="mobile-nav-link">About</a>
             <a href="contact/index.html" class="mobile-nav-link">Contact Us</a>
             <a href="referral/index.html" class="mobile-nav-link">Referral</a>
         </nav>
@@ -301,5 +294,116 @@
     </footer>
 
     <script src="js/main.js"></script>
+    
+    <!-- Referral Banner -->
+    <div id="referral-banner" class="referral-banner">
+        <button class="referral-close" aria-label="Close referral banner">&times;</button>
+        <p>Earn up to <strong>R300</strong> when you refer your friends to us</p>
+        <a href="referral/index.html" class="referral-btn">Learn More</a>
+    </div>
+    
+    <style>
+        .referral-banner {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #000;
+            color: #fff;
+            border-radius: 1rem;
+            padding: 1.5rem 3rem 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            max-width: 90%;
+        }
+        .referral-banner.hidden {
+            display: none;
+        }
+        .referral-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #fff;
+            line-height: 1;
+            font-weight: 300;
+        }
+        .referral-banner p {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .referral-btn {
+            --c: #000;
+            --p: 10%;
+            background: linear-gradient(var(--c), var(--c)) padding-box,
+                conic-gradient(
+                    from var(--gradient-angle, 0deg),
+                    transparent,
+                    white var(--p),
+                    transparent calc(var(--p) * 2)
+                ) border-box;
+            border: 1px solid transparent;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 3rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        .referral-btn:hover {
+            background: #fff;
+            color: #000;
+            border: 1px solid #fff;
+        }
+        @media (max-width: 768px) {
+            .referral-banner {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem 2rem 1.5rem;
+                text-align: center;
+            }
+        }
+    </style>
+    
+    <script>
+        const banner = document.getElementById('referral-banner');
+        const closeBtn = document.querySelector('.referral-close');
+        const referralBtn = document.querySelector('.referral-btn');
+        
+        closeBtn.addEventListener('click', () => {
+            banner.classList.add('hidden');
+            localStorage.setItem('referralBannerClosed', 'true');
+        });
+        
+        if (localStorage.getItem('referralBannerClosed') === 'true') {
+            banner.classList.add('hidden');
+        }
+        
+        let angle = 0;
+        let animationId;
+        const rotateGradient = () => {
+            angle = (angle + 1) % 360;
+            referralBtn.style.setProperty('--gradient-angle', `${angle}deg`);
+            animationId = requestAnimationFrame(rotateGradient);
+        };
+        rotateGradient();
+        
+        referralBtn.addEventListener('mouseenter', () => {
+            cancelAnimationFrame(animationId);
+        });
+        
+        referralBtn.addEventListener('mouseleave', () => {
+            rotateGradient();
+        });
+    </script>
 </body>
 </html>
