@@ -167,7 +167,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // Counter animation - runs immediately
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZnb3VxbmdmcnhsZmlwdWZneHB5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc5NzU5NzcsImV4cCI6MjA1MzU1MTk3N30.sb_publishable_ua8lZLKTyC-WZxf-1-h99A_FqH6ci9O';
+        
+        // Counter animation
         document.addEventListener('DOMContentLoaded', function() {
             const counter = document.getElementById('counter');
             if (counter) {
@@ -189,8 +191,92 @@
                 setTimeout(animate, 300);
             }
         });
+        
+        // Referral form submission
+        document.getElementById('referral-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const errorDiv = document.getElementById('error-message');
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            
+            errorDiv.textContent = '';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing...';
+            
+            try {
+                const firstName = fullName.split(' ')[0].toUpperCase();
+                const randomDigits = Math.floor(100 + Math.random() * 900);
+                const referralCode = `MET-${firstName}-${randomDigits}`;
+                
+                await fetch('https://fgouqngfrxlfipufgxpy.supabase.co/functions/v1/send-referral-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'apikey': SUPABASE_ANON_KEY
+                    },
+                    body: JSON.stringify({ full_name: fullName, email, referral_code: referralCode })
+                });
+                
+                document.getElementById('referral-form').style.display = 'none';
+                document.getElementById('success-view').style.display = 'block';
+                document.getElementById('referral-code').textContent = referralCode;
+                
+                const shareMessage = `Check out Modern Edge Technologies (MET)\nhttps://modernedgetech.co.za\n\nUse my referral code: ${referralCode}`;
+                document.getElementById('share-text').textContent = shareMessage;
+                
+                document.getElementById('copy-btn').addEventListener('click', () => {
+                    navigator.clipboard.writeText(referralCode).then(() => {
+                        const btn = document.getElementById('copy-btn');
+                        const originalText = btn.textContent;
+                        btn.textContent = 'Copied!';
+                        setTimeout(() => btn.textContent = originalText, 2000);
+                    });
+                });
+                
+                document.getElementById('copy-message-btn').addEventListener('click', () => {
+                    navigator.clipboard.writeText(shareMessage).then(() => {
+                        const btn = document.getElementById('copy-message-btn');
+                        const originalText = btn.textContent;
+                        btn.textContent = 'Copied!';
+                        setTimeout(() => btn.textContent = originalText, 2000);
+                    });
+                });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                errorDiv.textContent = 'Something went wrong. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get My Referral Code';
+            }
+        });
+        
+        // Form focus functionality
+        const formItems = document.querySelectorAll('.form-item');
+        formItems.forEach(item => {
+            const input = item.querySelector('input');
+            const title = item.querySelector('h3');
+            
+            if (input && title) {
+                title.addEventListener('click', () => {
+                    item.classList.add('focused');
+                    input.focus();
+                });
+                
+                input.addEventListener('focus', () => {
+                    item.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        item.classList.remove('focused');
+                    }
+                });
+            }
+        });
     </script>
-    <script src="../js/referral.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
